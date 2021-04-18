@@ -1,0 +1,57 @@
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #bd3e35;
+  width: 100%;
+  padding: 15px;
+  z-index: 8;
+}
+
+.navbar a {
+  color: #FFF;
+  position: relative;
+  font-size: 18px;
+  font-family: "Roboto"; /* I need to import this font */
+  margin: 8px;
+  text-decoration: none;
+}
+
+.navbar a:before {
+  content: "";
+  background-color: #FFF;
+  width: 0;
+  height: 1px;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  transition: width 0.3s;
+}
+
+.navbar a:hover:before {
+  width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  .navbar {
+    position: fixed;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    left: -300px;
+    width: 200px;
+    transition: left 0.4s;
+  }
+
+  .navbar.open {
+    left: -15px;
+  }
+}
