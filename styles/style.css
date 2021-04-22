@@ -5,24 +5,26 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0;
+}
+
+* {
   box-sizing: border-box;
 }
 
 .menu {
   width: 100px;
   height: 100px;
-  background-color: #f25246;
+  background-color: #f251468c;
   border-radius: 50%;
   position: fixed;
-  top: 15px;
-  left: 15px;
   display: none;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   overflow: hidden;
+  backdrop-filter: saturate(180%) blur(20px);
   z-index: 9;
-  transition: all 0.3s;
 }
 
 .menu:before {
@@ -58,7 +60,6 @@ body {
 }
 
 .menu.open {
-  left: 115px;
   border-radius: 50%;
 }
 
@@ -84,5 +85,27 @@ body {
 @media screen and (max-width: 600px) {
   .menu {
     display: flex;
+    bottom: 40px;
+    right: 15px;
+    width: 70px;
+    height: 70px;
+    transition: all 0.4s, opacity 0.4s;
+  }
+
+  .menu span {
+    width: 30px;
+    height: 4px;
+  }
+  .menu span:first-child {
+    top: 25px;
+  }
+  .menu span:last-child {
+    bottom: 25px;
+  }
+  .menu.open span:first-child {
+    top: 33px;
+  }
+  .menu.open span:last-child {
+    bottom: 33px;
   }
 }
